@@ -33,19 +33,3 @@ if table:
 
 
 
-
-import requests 
-
-#fetching webpage content
-url = 'https://ww150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401'
-response = requests.get(url)
-html_content = response.content
-
-#Parse the html content BeautifulSoup 
-soup = BeautifulSoup(html_content, 'html.parser')
-
-#extract specific elements 
-table = soup.find(id='simpleTable')
-
-print(table)
-
